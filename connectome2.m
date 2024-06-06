@@ -27,7 +27,9 @@ for group_idx = 1:numel(file_names)
     % edge widths / corr values
     edgeWidths = abs(correlation_matrix(correlation_matrix ~= 0));
     edgeWidths = 1 + 9 * (edgeWidths - min(edgeWidths)) / (max(edgeWidths) - min(edgeWidths)); 
-
+    
+    % created with circular graph package, MatLab file exchange: Paul Kassebaum (2024). circularGraph (https://github.com/paul-kassebaum-mathworks/circularGraph), GitHub. 
+   
     figure;
     circularGraph(binarizedMatrix, 'Label', labels, 'NodeSizes', nodeSizes, 'EdgeWidths', edgeWidths);
    
